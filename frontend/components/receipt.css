@@ -1,0 +1,47 @@
+@media print {
+  body * {
+    visibility: hidden; /* Sembunyikan UI utama */
+  }
+  
+  .print-container, .print-container * {
+    visibility: visible;
+  }
+  
+  .print-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 58mm; /* Ukuran thermal printer 58mm */
+    margin: 0;
+    padding: 0;
+  }
+
+  .thermal-receipt {
+    width: 48mm; /* Lebar efektif cetak */
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    background: white;
+  }
+
+  .page-break {
+    page-break-after: always;
+    margin-top: 5mm;
+  }
+
+  .border-b-dashed {
+    border-bottom: 1px dashed black;
+  }
+  
+  .border-b-dotted {
+    border-bottom: 1px dotted black;
+  }
+}
+
+/* Sembunyikan dari layar saat tidak print */
+@media screen {
+  .print-container {
+    display: none;
+  }
+}
